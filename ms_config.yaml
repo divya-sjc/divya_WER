@@ -1,0 +1,17 @@
+configurations:
+  stage:
+    host: "https://magic-studio-stage.delightfulforest-40b0615c.centralindia.azurecontainerapps.io/login"   #stage
+    cred: "/Users/divyac/Documents/Required_files/conva-ai-stage-firebase-adminsdk-g9mru-0339b9ffc3.json"   #stage
+    mongo_uri: "mongodb+srv://slanglabs_stage:ScnvPrL1Ib4Jh4FH@omni-stage-db.glmwhqv.mongodb.net/"   #stage
+  prod:
+    host: "https://studio.conva.ai/login"    #Prod
+    cred: "/Users/divyac/Documents/Required_files/conva-ai-prod-firebase-adminsdk-c8waj-ee0f94b2b7.json"   #prod
+    mongo_uri: "mongodb+srv://slanglabs_prod:pvNBhUJk0RxSGQ1W@omni-prod-db.p2alx.mongodb.net/"  #prod
+  dev:
+    host: "https://magic-studio-dev.thankfulmoss-ed94449a.centralindia.azurecontainerapps.io/"    #dev
+    cred: "/Users/divyac/Documents/Required_files/conva-ai-dev-firebase-adminsdk-vprzs-e8216e066c.json"  #dev
+    mongo_uri: "mongodb+srv://slanglabs_dev:h7pzS6HTISH7fmh8@omni-dev-db.bbdkvrr.mongodb.net"  #dev
+  local:
+    host: "http://localhost:3001/"
+    cred: "/Users/divyac/Documents/Required_files/slang-omni-dev-firebase-adminsdk-e8jqa-267a919814.json"  #local
+    mongo_uri: "mongodb://localhost:27017/?directConnection=true" #local 
