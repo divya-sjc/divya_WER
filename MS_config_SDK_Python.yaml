@@ -1,0 +1,88 @@
+configurations:
+  stage_amazon:
+    input_file_path: "../polyglot/tools/testing/loadtest/Omni_Test.xlsx"
+    input_sheet_name: "Amazon"
+    output_file_path: "../polyglot/tools/testing/loadtest/Output/MS_MKRetail_stage_+current_date+.csv"
+    HOST: "https://omni-inference-stage-v2.delightfulforest-40b0615c.centralindia.azurecontainerapps.io/"
+    assistant_id: "467f69a619ca473bafd8a76ba8c6e7d2"
+    API_KEY: "bebfda442b3340ccbe5e22445a5d597a"
+    assistant_version: "1.0.0" #Amazon stage
+    para: ['brand', 'category', 'quantity', 'measurement', 'filters', cart_value, 'related_products', 'recipe_steps']
+  stage_petsmart:
+    input_file_path: "../polyglot/tools/testing/loadtest/Omni_Test.xlsx"
+    input_sheet_name: "petsmart_divya"
+    output_file_path: "../polyglot/tools/testing/loadtest/Output/MS_Petsmart_stage_+current_date+.csv"
+    HOST: "https://omni-inference-stage-v2.delightfulforest-40b0615c.centralindia.azurecontainerapps.io/"
+    assistant_id: "933cfe17556746558aed9ae0727199c1"
+    API_KEY: "bebfda442b3340ccbe5e22445a5d597a"
+    assistant_version: "1.0.0" #Petsmart stage
+    para: []
+  prod_amazon:
+    input_file_path: "../polyglot/tools/testing/loadtest/Omni_Test.xlsx"
+    input_sheet_name: "Amazon"
+    output_file_path: "../polyglot/tools/testing/loadtest/Output/Amazon_shopping_prod_+current_date+.csv"
+    HOST: "https://infer-v2.conva.ai"              
+    assistant_id: "e39ae073c80e46e3a6acd498b360b726"
+    API_KEY: "5311acb5ab984789bbc730ea622a99d0"
+    assistant_version: "2.0.0" #Amazon1 prod
+    para: ['brand', 'category', 'quantity', 'measurement', 'filters', cart_value, 'related_products', 'search_term', 'recipe_steps']
+  dev_freshdesk:
+    input_file_path: "../polyglot/tools/testing/loadtest/Omni_Test.xlsx"
+    input_sheet_name: "freshdesk"
+    output_file_path: "../polyglot/tools/testing/loadtest/Output/freshdesk_faq_+current_date+11.csv"
+    HOST: "https://omni-inference-dev-v2.thankfulmoss-ed94449a.centralindia.azurecontainerapps.io"              
+    assistant_id: "8e482dab3bb7488397f0ff13f5002439"
+    API_KEY: "0ffa97f908fa4760bc2287d350b989db"
+    assistant_version: "12.0.0" #dev freshdesk
+    para: ['response_confirmation', 'steps', 'URLs']
+  dev_flick:
+    input_file_path: "../polyglot/tools/testing/loadtest/Omni_Test.xlsx"
+    input_sheet_name: "flick"
+    output_file_path: "../polyglot/tools/testing/loadtest/Output/flick_faq_+current_date+.csv"
+    HOST: "https://omni-inference-dev-v2.thankfulmoss-ed94449a.centralindia.azurecontainerapps.io"              
+    assistant_id: "a86f385ae2634503bd1bcf260cbe4df3"
+    API_KEY: "0ffa97f908fa4760bc2287d350b989db"
+    assistant_version: "8.0.0" #dev flick
+    para: ['service_type', 'appointment_confirmation', 'user_address', 'user_name', 'appointment_date', 'appointment_time', 'action_type', 'appointment_id']
+  dev_knox_api:
+    input_file_path: "../polyglot/tools/testing/loadtest/Omni_Test.xlsx"
+    input_sheet_name: "knox_api"
+    output_file_path: "../polyglot/tools/testing/loadtest/Output/knox_api_faq_+current_date+.csv"
+    HOST: "https://omni-inference-dev-v2.thankfulmoss-ed94449a.centralindia.azurecontainerapps.io"              
+    assistant_id: "3919d3be72254190a7c7f034f805fb19"
+    API_KEY: "0ffa97f908fa4760bc2287d350b989db"
+    assistant_version: "14.0.0" #dev knox
+    para: ['json_response', 'response_confirmation', 'steps', 'url']
+  dev_weechef:
+    input_file_path: "../polyglot/tools/testing/loadtest/Omni_Test.xlsx"
+    input_sheet_name: "Weechef"
+    output_file_path: "../polyglot/tools/testing/loadtest/Output/weechef_+current_date+.csv"
+    HOST: "https://omni-inference-dev-v2.thankfulmoss-ed94449a.centralindia.azurecontainerapps.io"              
+    assistant_id: "f3d1aeb5db394383bc2a9dd5978a028e"
+    API_KEY: "0ffa97f908fa4760bc2287d350b989db"
+    assistant_version: "9.0.0" #dev weechef
+    para: ['confirmation_response', 'steps']
+  stage_knox_api:
+    input_file_path: "../polyglot/tools/testing/loadtest/Omni_Test.xlsx"
+    input_sheet_name: "knox_api"
+    output_file_path: "../polyglot/tools/testing/loadtest/Output/knox_api_faq_+current_date+.csv"
+    HOST: "https://omni-inference-stage-v2.delightfulforest-40b0615c.centralindia.azurecontainerapps.io"              
+    assistant_id: "3919d3be72254190a7c7f034f805fb19"
+    API_KEY: "0ffa97f908fa4760bc2287d350b989db"
+    assistant_version: "11.0.0" #stage knox
+    para: ['question', 'message', 'json_response', 'response_confirmation', 'steps', 'url']
+  stage_consolidated_prompt:
+    input_file_path: "/Users/divyac/Downloads/Omni_Test.xlsx"
+    input_sheet_name: "consolidated_stage"
+    output_file_path: "../polyglot/tools/testing/loadtest/Output/consolidated_prompts_stage_1_+current_date+.csv"
+    HOST: "https://omni-inference-stage-v2.delightfulforest-40b0615c.centralindia.azurecontainerapps.io"              
+  dev_consolidated_prompt:
+    input_file_path: "/Users/divyac/Downloads/Omni_Test.xlsx"
+    input_sheet_name: "consolidated_dev"
+    output_file_path: "../polyglot/tools/testing/loadtest/Output/consolidated_prompts_dev_+current_date+.csv"
+    HOST: "https://omni-inference-dev-v2.thankfulmoss-ed94449a.centralindia.azurecontainerapps.io"              
+  prod_consolidated_prompt:
+    input_file_path: "/Users/divyac/Downloads/Omni_Test.xlsx"
+    input_sheet_name: "consolidated_prod"
+    output_file_path: "../polyglot/tools/testing/loadtest/Output/consolidated_prompts_prod_+current_date+.csv"
+    HOST: "https://infer-v2.conva.ai"   
