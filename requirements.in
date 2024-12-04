@@ -1,0 +1,6 @@
+streamlit
+DateTime
+pandas
+psycopg2-binary
+PyYAML
+argparse

@@ -1,0 +1,36 @@
+version: "2.4"
+services:
+  data_updation_db:
+      image: "postgres:9.6-alpine"
+      restart: on-failure
+      ports:
+          - "5432:5432"
+      environment:
+          POSTGRES_PASSWORD: slanglocal
+          POSTGRES_USER: slanglocal
+          POSTGRES_DB: "dataupdationlocaldb"
+      healthcheck:
+          test: ["CMD-SHELL", "pg_isready -U slanglocal -d dataupdationlocaldb"]
+          interval: 20s
+          timeout: 60s
+          retries: 6
+      volumes:
+          - $PWD/client/scripts/database/sql/dataupdation.sql:/docker-entrypoint-initdb.d/init.sql
+          - /slang-remote/postgres-data-updation:/var/lib/postgresql/data/
+  data_updation:
+      build:
+          context: $PWD
+          dockerfile: $PWD/tools/data_updation/data-updation-local.dockerfile
+      volumes:
+          - $PWD:/polyglot
+          - /slang-remote:/slang-remote
+          - /slang-local:/slang-local
+      environment:
+        SERVICE_NAME: "data_updation"
+        PORT: 8501
+      ports:
+          - 8501:8501
+      depends_on:
+          data_updation_db:
+              condition: service_healthy
+      restart: on-failure
